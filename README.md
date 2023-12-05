@@ -1,4 +1,5 @@
 # BeLOG-System
+The BeLOG system is designed to provide an easy-to-use behavior logging system during a behavior therapy session.
 ## Codes
 The "Codes" folder contains source code for firmwares of T-Watch, camera control, and BeLOG program.
 ## PresetProjects
