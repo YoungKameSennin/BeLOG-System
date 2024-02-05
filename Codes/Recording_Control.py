@@ -213,7 +213,7 @@ try:
                 time.sleep(0.15)
                 if not b1:
                     b1_start = time.time() - start_time
-                    event = [round(b1_start, 1), "name1",
+                    event = [round(b1_start, 1), subject_name,
                              "code1", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
@@ -225,7 +225,7 @@ try:
                     b1 = 1
                 else:
                     b1_stop = time.time() - start_time
-                    event = [round(b1_stop, 1), "name1", "code1", "", "", "NA"]
+                    event = [round(b1_stop, 1), subject_name, "code1", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
                     print(log_time + "Behavior1 ends at:  ",
@@ -238,7 +238,7 @@ try:
                 time.sleep(0.15)
                 if not b2:
                     b2_start = time.time() - start_time
-                    event = [round(b2_start, 1), "name1",
+                    event = [round(b2_start, 1), subject_name,
                              "code2", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
@@ -250,7 +250,7 @@ try:
                     b2 = 1
                 else:
                     b2_stop = time.time() - start_time
-                    event = [round(b2_stop, 1), "name1", "code2", "", "", "NA"]
+                    event = [round(b2_stop, 1), subject_name, "code2", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
                     print(log_time + "Behavior2 ends at:  ",
@@ -263,7 +263,7 @@ try:
                 time.sleep(0.15)
                 if not b3:
                     b3_start = time.time() - start_time
-                    event = [round(b3_start, 1), "name1",
+                    event = [round(b3_start, 1), subject_name,
                              "code3", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
@@ -275,7 +275,7 @@ try:
                     b3 = 1
                 else:
                     b3_stop = time.time() - start_time
-                    event = [round(b3_stop, 1), "name1", "code3", "", "", "NA"]
+                    event = [round(b3_stop, 1), subject_name, "code3", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
                     print(log_time + "Behavior3 ends at:  ",
@@ -288,7 +288,7 @@ try:
                 time.sleep(0.15)
                 if not b4:
                     b4_start = time.time() - start_time
-                    event = [round(b4_start, 1), "name1",
+                    event = [round(b4_start, 1), subject_name,
                              "code4", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
@@ -300,7 +300,7 @@ try:
                     b4 = 1
                 else:
                     b4_stop = time.time() - start_time
-                    event = [round(b4_stop, 1), "name1", "code4", "", "", "NA"]
+                    event = [round(b4_stop, 1), subject_name, "code4", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
                     print(log_time + "Behavior4 ends at:  ",
