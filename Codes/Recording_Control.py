@@ -214,24 +214,24 @@ try:
                 if not b1:
                     b1_start = time.time() - start_time
                     event = [round(b1_start, 1), subject_name,
-                             "code1", "", "", "NA"]
+                             "A", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior1 starts at:",
+                    print(log_time + "Aggressive behavior starts at:",
                           time_converter(b1_start))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior1 starts at:",
+                        print(log_time + "Aggressive behavior starts at:",
                               time_converter(b1_start), file=file)
                     b1 = 1
                 else:
                     b1_stop = time.time() - start_time
-                    event = [round(b1_stop, 1), subject_name, "code1", "", "", "NA"]
+                    event = [round(b1_stop, 1), subject_name, "A", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior1 ends at:  ",
+                    print(log_time + "Aggressive behavior ends at:  ",
                           time_converter(b1_stop))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior1 ends at:  ",
+                        print(log_time + "Aggressive behavior ends at:  ",
                               time_converter(b1_stop), file=file)
                     b1 = 0
             elif keyboard.is_pressed('ctrl+alt+b'):
@@ -239,24 +239,24 @@ try:
                 if not b2:
                     b2_start = time.time() - start_time
                     event = [round(b2_start, 1), subject_name,
-                             "code2", "", "", "NA"]
+                             "V", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior2 starts at:",
+                    print(log_time + "Violent behavior starts at:",
                           time_converter(b2_start))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior2 starts at:",
+                        print(log_time + "Violent behavior starts at:",
                               time_converter(b2_start), file=file)
                     b2 = 1
                 else:
                     b2_stop = time.time() - start_time
-                    event = [round(b2_stop, 1), subject_name, "code2", "", "", "NA"]
+                    event = [round(b2_stop, 1), subject_name, "V", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior2 ends at:  ",
+                    print(log_time + "Violent behavior ends at:  ",
                           time_converter(b2_stop))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior2 ends at:  ",
+                        print(log_time + "Violent behavior ends at:  ",
                               time_converter(b2_stop), file=file)
                     b2 = 0
             elif keyboard.is_pressed('ctrl+alt+c'):
@@ -264,24 +264,24 @@ try:
                 if not b3:
                     b3_start = time.time() - start_time
                     event = [round(b3_start, 1), subject_name,
-                             "code3", "", "", "NA"]
+                             "S", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior3 starts at:",
+                    print(log_time + "Self-injurious behavior starts at:",
                           time_converter(b3_start))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior3 starts at:",
+                        print(log_time + "Self-injurious behavior starts at:",
                               time_converter(b3_start), file=file)
                     b3 = 1
                 else:
                     b3_stop = time.time() - start_time
-                    event = [round(b3_stop, 1), subject_name, "code3", "", "", "NA"]
+                    event = [round(b3_stop, 1), subject_name, "S", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior3 ends at:  ",
+                    print(log_time + "Self-injurious behavior ends at:  ",
                           time_converter(b3_stop))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior3 ends at:  ",
+                        print(log_time + "Self-injurious behavior ends at:  ",
                               time_converter(b3_stop), file=file)
                     b3 = 0
             elif keyboard.is_pressed('ctrl+alt+d'):
@@ -289,24 +289,24 @@ try:
                 if not b4:
                     b4_start = time.time() - start_time
                     event = [round(b4_start, 1), subject_name,
-                             "code4", "", "", "NA"]
+                             "O", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior4 starts at:",
+                    print(log_time + "Other behavior starts at:",
                           time_converter(b4_start))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior4 starts at:",
+                        print(log_time + "Other behavior starts at:",
                               time_converter(b4_start), file=file)
                     b4 = 1
                 else:
                     b4_stop = time.time() - start_time
-                    event = [round(b4_stop, 1), subject_name, "code4", "", "", "NA"]
+                    event = [round(b4_stop, 1), subject_name, "O", "", "", "NA"]
                     events_list.append(event)
                     log_time = time.strftime("%T-%m/%d/%Y") + ": "
-                    print(log_time + "Behavior4 ends at:  ",
+                    print(log_time + "Other behavior ends at:  ",
                           time_converter(b4_stop))
                     with open(logger_path, 'a') as file:
-                        print(log_time + "Behavior4 ends at:  ",
+                        print(log_time + "Other behavior ends at:  ",
                               time_converter(b4_stop), file=file)
                     b4 = 0
 
