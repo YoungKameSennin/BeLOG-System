@@ -169,22 +169,22 @@ try:
                     audio_frames = []
 
                     # Combine audio and video using moviepy
-                    video_clip = VideoFileClip(color_path)
-                    audio_clip = AudioFileClip(audio_path)
-                    video_with_audio = video_clip.set_audio(audio_clip)
-                    combined_path = os.path.join(
-                        recordings_folder, f'{current_time}_combined.avi')
-                    video_with_audio.write_videofile(
-                        combined_path, codec='libx264', logger=None)
-                    video_clip.close()
-                    audio_clip.close()
+                    #video_clip = VideoFileClip(color_path)
+                    #audio_clip = AudioFileClip(audio_path)
+                    #video_with_audio = video_clip.set_audio(audio_clip)
+                    #combined_path = os.path.join(
+                    #    recordings_folder, f'{current_time}_combined.avi')
+                    #video_with_audio.write_videofile(
+                    #    combined_path, codec='libx264', logger=None)
+                    #video_clip.close()
+                    #audio_clip.close()
 
                 # Save data as BORIS project file
                 project_file_name = projects_folder + \
                     "/subject" + str(subject) + ".boris"
                 events_list_str = json.dumps(events_list)
                 target_string = "}, \"behavioral_categories\""
-                string_to_insert = f'"{current_time}": {{"file": {{"1": ["C:/Data/Recordings/{current_time}_combined.avi"], "2": [], "3": [], "4": [], "5": [], "6": [], "7": [], "8": []}}, "type": "MEDIA", "date": "{current_time_prj}", "description": "", "time offset": 0.0, "events": {events_list_str}, "observation time interval": [0, 0], "independent_variables": {{}}, "visualize_spectrogram": false, "visualize_waveform": false, "media_creation_date_as_offset": false, "media_scan_sampling_duration": 0, "image_display_duration": 1, "close_behaviors_between_videos": false, "media_info": {{"length": {{"C:/Users/Wei/Documents/Recordings/{current_time}_combined.avi": {rounded_duration}}}, "fps": {{"C:/Users/Wei/Documents/Recordings/{current_time}_combined.avi": 30.0}}, "hasVideo": {{"C:/Users/Wei/Documents/Recordings/{current_time}_combined.avi": true}}, "hasAudio": {{"C:/Users/Wei/Documents/Recordings/{current_time}_combined.avi": true}}, "offset": {{"1": 0.0}}}}}}'
+                string_to_insert = f'"{current_time}": {{"file": {{"1": ["C:/Data/Recordings/{current_time}_rgb.avi"], "2": [], "3": [], "4": [], "5": [], "6": [], "7": [], "8": []}}, "type": "MEDIA", "date": "{current_time_prj}", "description": "", "time offset": 0.0, "events": {events_list_str}, "observation time interval": [0, 0], "independent_variables": {{}}, "visualize_spectrogram": false, "visualize_waveform": false, "media_creation_date_as_offset": false, "media_scan_sampling_duration": 0, "image_display_duration": 1, "close_behaviors_between_videos": false, "media_info": {{"length": {{"C:/Users/Wei/Documents/Recordings/{current_time}_rgb.avi": {rounded_duration}}}, "fps": {{"C:/Users/Wei/Documents/Recordings/{current_time}_rgb.avi": 30.0}}, "hasVideo": {{"C:/Users/Wei/Documents/Recordings/{current_time}_rgb.avi": true}}, "hasAudio": {{"C:/Users/Wei/Documents/Recordings/{current_time}_rgb.avi": true}}, "offset": {{"1": 0.0}}}}}}'
 
                 with open(project_file_name, 'r') as file:
                     content = file.read()
