@@ -113,12 +113,19 @@ def record():
     global subject
     global subject_name
     global rec
-    python_script = "/Users/ws/Desktop/BeLog/BeLOG-System/Codes/Recording_Control_Regular.py"
+
+    #python_script = "/Users/ws/Desktop/BeLog/BeLOG-System/Codes/Recording_Control_Regular.py"
+    python_script = "/media/psf/Home/Desktop/BeLog/BeLOG-System/Codes/Recording_Control_Linux.py"
     arguments = [str(subject), subject_name]
     command = ["python3", python_script] + arguments
     recording = subprocess.Popen(command)
     recording.wait()
 
+# Ubuntu
+#projects_folder = "/media/psf/Home/Desktop/BeLog/BeLOG-System/Projects"
+#logger_path = "/media/psf/Home/Desktop/BeLog/BeLOG-System/Log.txt"
+
+# MAC
 logger_path = "/Users/ws/Desktop/BeLog/BeLOG-System/Log.txt"
 projects_folder = "/Users/ws/Desktop/BeLog/BeLOG-System/Projects"
 application_path = 'C:/BeLog/dist/Recording_Control.exe'
