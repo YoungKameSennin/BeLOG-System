@@ -1,17 +1,15 @@
 # Recording Control for Linux
 # version 1.0
 # Data: Feb 29, 2024
-
-import numpy as np
+import wave
 import cv2
 import time
 import os
 import pyaudio
 from pynput import keyboard
-import wave
-import json
 import time
 import sys
+import json
 
 def print_log(log_message):
     log_time = time.strftime("%T-%m/%d/%Y") + ": "
@@ -167,15 +165,15 @@ audio_stream = p.open(format=audio_format,
                       input_device_index=audio_device_index)
 
 
-recordings_folder = "/Users/ws/Desktop/BeLog/BeLOG-System/Recordings"
-projects_folder = "/Users/ws/Desktop/BeLog/BeLOG-System/Projects"
-logger_path = "/Users/ws/Desktop/BeLog/BeLOG-System/Log.txt"
+recordings_folder = "Recordings"
+projects_folder = "Projects"
+logger_path = "Log.txt"
 audio_frames = []
 b1_start, b1_stop, b2_start, b2_stop, b3_start, b3_stop, b4_start, b4_stop = (
     -1 for i in range(8))
 b1, b2, b3, b4 = (0 for i in range(4))
-subject = -1
-subject_name = "unknown"
+subject = 0
+subject_name = "[Please edit subject name]"
 
 if len(sys.argv) > 1:
     subject = sys.argv[1]
@@ -193,21 +191,21 @@ start_time = time.time()
 events_list = []
 rec = 1
 
-# Initialize the video capture object with the default camera
-cap = cv2.VideoCapture(0)
+# Define the codec and create VideoWriter object
+width = 1280
+height = 720
+FPS = 30.0
 
-# Check if camera opened successfully
-if not cap.isOpened():
-    print_log("Error: Could not open camera")
-    exit()
+# Start capturing from the camera
+cap = cv2.VideoCapture(2)
+# Set the desired resolution
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+cap.set(cv2.CAP_PROP_FPS, FPS)
 
-# Define the codec and create VideoWriter object 
-fourcc = cv2.VideoWriter_fourcc(*'XVID') 
-rgb_writer = cv2.VideoWriter(rgb_path, fourcc, 20.0, (1280, 720))
-
-# Create a window to display the camera feed
-cv2.namedWindow('Preview')
-cv2.moveWindow('Preview', 620, 0)
+# Define the codec and create VideoWriter object
+fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+rgb_writer = cv2.VideoWriter(rgb_path, fourcc, FPS, (width,  height))
 
 # Define the hotkeys
 h = keyboard.GlobalHotKeys({'<ctrl>+<alt>+r': stop_record, 
@@ -225,18 +223,18 @@ while rec:
         print_log("Failed to grab frame")
         break
 
-    # audio_data = audio_stream.read(audio_chunk_size)
-    # audio_frames.append(audio_data)
+    audio_data = audio_stream.read(audio_chunk_size)
+    audio_frames.append(audio_data)
 
     rgb_writer.write(frame)
 
     cv2.imshow('Preview', frame)
 
-    key = cv2.waitKey(1)
+    if cv2.waitKey(1) == ord('q'):
+        break
 
 rgb_writer.release()
 cap.release()
 p.terminate()
 cv2.destroyAllWindows()
-
 print_log("Ready")
