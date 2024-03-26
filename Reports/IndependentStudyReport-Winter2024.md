@@ -32,14 +32,19 @@ to maintain the server.
     minute indefinitely. ![alt text](Images/image-1.png)
 
 -   Configure "Settings" to make it an unique immortal process.
-    ![alt text](Images/image-2.png) **Reasoning:** Select **_“Allow task to be run on
-    demand”_** for testing. Select **_“Run task as soon as possible after a
+    ![alt text](Images/image-2.png)
+    **Reasoning:**
+    Select **_“Allow task to be run on
+    demand”_** for testing.\
+    Select **_“Run task as soon as possible after a
     scheduled start is missed”_** to ensure the task is run in certain edge
-    cases. Deselect **_“If the task fails, restart every:”_** since it's not
-    necessary; the computer will check the status of the task every 1 minute.
+    cases.\
+    Deselect **_“If the task fails, restart every:”_** since it's not
+    necessary; the computer will check the status of the task every 1 minute.\
     Deselect **_“Stop the task if it runs longer than:”_** and **_“if the task
     is not scheduled to run again, delete it after:”_** to ensure its
-    immortality. Deselect **_“if the running task does not end when requested,
+    immortality.\
+    Deselect **_“if the running task does not end when requested,
     force it to stop”_** and set **_“If the task is already running, then the
     following rule applies: Do not start a new instance”_** to ensure its
     uniqueness.
@@ -133,7 +138,8 @@ from BORIS.
 
 ![alt text](Images/image-5.png) **(UI Wireframe)**
 
-1. Playback Upon clicking on a recorded session, the webserver renders an HTML
+1. Playback\
+Upon clicking on a recorded session, the webserver renders an HTML
    template:
 
 ```
@@ -148,7 +154,8 @@ from BORIS.
     </video>
 ```
 
-2. Event List The webserver will read recorded timestamps related to the session
+2. Event List\
+The webserver will read recorded timestamps related to the session
    in the format where each piece of information is delimited by a comma, such
    as:
 
